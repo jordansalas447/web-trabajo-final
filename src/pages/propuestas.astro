@@ -4,5 +4,7 @@ import { site } from '../data/site';
 ---
 <Layout title="Propuestas" active="propuestas"><main class="wrap">
 <h2>Propuestas para un futuro sostenible</h2><p>Cada integrante plantea una acción concreta para avanzar hacia la meta del ODS 13.</p>
-<div class="grid">{site.equipo.map(m=><article class="card big"><h3>{m.nombre}</h3><p class="small">{m.carrera}</p><p>{m.propuesta}</p></article>)}</div>
+<div class="grid">{site.equipo.map(m=><article class="card big"><h3>{m.propuestaTitulo}</h3><p class="small">{m.nombre} · {m.carrera}</p><p>{m.propuesta}</p>
+<img src={m.img} alt={m.propuestaTitulo} style="width:100%;border-radius:10px" onerror="this.outerHTML='<div class=&quot;empty&quot; style=&quot;padding:1.5rem&quot;>Imagen: public'+this.getAttribute('src')+'</div>'"/>
+{m.slides?<iframe class="frame" src={m.slides} title={'Slides: '+m.propuestaTitulo} allowfullscreen></iframe>:<div class="empty" style="margin-top:1rem;padding:1.5rem">Slides de esta propuesta: pega la URL en site.ts → slides</div>}</article>)}</div>
 </main></Layout>

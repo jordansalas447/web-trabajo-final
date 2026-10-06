@@ -6,6 +6,8 @@ import { site } from '../data/site';
 <h2>Cómo se evidencia el cambio climático en el Perú</h2>
 <p>El Perú es muy vulnerable: tiene costa desértica, Andes con glaciares tropicales y una gran Amazonía.</p>
 <div class="grid">{site.impactos.map(i=><article class="card big"><h3>{i.t}</h3><p>{i.d}</p></article>)}</div>
+<h2 style="margin-top:3rem">Galería de imágenes</h2>
+<div class="grid">{site.galeria.map(g=><figure class="card"><img src={g.src} alt={g.alt} style="width:100%;border-radius:10px" onerror="this.outerHTML='<div class=&quot;empty frame&quot;>Sube tu imagen a public'+this.getAttribute('src')+'</div>'"/><figcaption class="small">{g.credito}</figcaption></figure>)}</div>
 <h2 style="margin-top:3rem">Citas del trabajo</h2>
 <div class="grid">{site.citas.map(c=><blockquote class="card"><p class="small">{c.tipo}</p>{c.texto}</blockquote>)}</div>
 <h2 style="margin-top:3rem">Presentación (Slides)</h2>

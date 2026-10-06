@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
+const emb=(u:string)=>{const m=u.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/);return m?'https://www.youtube.com/embed/'+m[1]:u;};
 ---
 <Layout title="Video" active="video"><main class="wrap">
 <h2>Exposición del equipo</h2><p class="small">Duración máxima: 7 minutos.</p>
-{site.videoUrl?<iframe class="frame" src={site.videoUrl} title="Video de exposición" allowfullscreen></iframe>:<div class="empty frame">Pega la URL embed del video en site.ts → videoUrl</div>}
+{site.videoUrl?<iframe class="frame" src={emb(site.videoUrl)} title="Video de exposición" allowfullscreen></iframe>:<div class="empty frame">Pega la URL embed del video en site.ts → videoUrl</div>}
+<h2 style="margin-top:3rem">Videos de apoyo (YouTube)</h2><p class="small">Pega el enlace normal de YouTube en site.ts → videos[].url y se convierte solo.</p>
+<div class="grid">{site.videos.map(v=><article class="card"><h3>{v.titulo}</h3>{v.url?<iframe class="frame" src={emb(v.url)} title={v.titulo} allowfullscreen></iframe>:<div class="empty frame"><a href={'https://www.youtube.com/results?search_query='+encodeURIComponent(v.buscar)}>Buscar en YouTube y copiar el enlace</a></div>}</article>)}</div>
 <h2 style="margin-top:3rem">Autoevaluación</h2>
 <div class="grid">{site.equipo.map(m=><article class="card"><h3>{m.nombre}</h3><p><strong>Fortalezas:</strong> {m.fortalezas}</p><p><strong>Debilidades:</strong> {m.debilidades}</p></article>)}</div>
 </main></Layout>
