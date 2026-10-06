@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+<Layout title="Impactos" active="impactos"><main class="wrap">
+<h2>Cómo se evidencia el cambio climático en el Perú</h2>
+<p>El Perú es muy vulnerable: tiene costa desértica, Andes con glaciares tropicales y una gran Amazonía.</p>
+<div class="grid">{site.impactos.map(i=><article class="card big"><h3>{i.t}</h3><p>{i.d}</p></article>)}</div>
+<h2 style="margin-top:3rem">Citas del trabajo</h2>
+<div class="grid">{site.citas.map(c=><blockquote class="card"><p class="small">{c.tipo}</p>{c.texto}</blockquote>)}</div>
+<h2 style="margin-top:3rem">Presentación (Slides)</h2>
+{site.slidesUrl?<iframe class="frame" src={site.slidesUrl} title="Presentación" allowfullscreen></iframe>:<div class="empty frame">Pega la URL embed de tu Google Slides en site.ts → slidesUrl</div>}
+</main></Layout>

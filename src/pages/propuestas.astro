@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+<Layout title="Propuestas" active="propuestas"><main class="wrap">
+<h2>Propuestas para un futuro sostenible</h2><p>Cada integrante plantea una acción concreta para avanzar hacia la meta del ODS 13.</p>
+<div class="grid">{site.equipo.map(m=><article class="card big"><h3>{m.nombre}</h3><p class="small">{m.carrera}</p><p>{m.propuesta}</p></article>)}</div>
+</main></Layout>

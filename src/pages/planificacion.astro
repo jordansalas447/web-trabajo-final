@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+<Layout title="Planificación" active="plan"><main class="wrap">
+<h2>Planificación del trabajo</h2>
+<ol class="tl">{site.plan.map(p=><li><strong>{p.fecha}</strong><br/>{p.tarea}</li>)}</ol>
+<h2 style="margin-top:3rem">Evidencia de la reunión</h2>
+<img src={site.meetImg} alt="Captura de la reunión de planificación" style="max-width:100%;border-radius:14px" onerror="this.outerHTML='<div class=&quot;empty frame&quot;>Guarda tu captura en public/evidencias/meet.png</div>'"/>
+</main></Layout>
