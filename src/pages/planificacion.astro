@@ -2,9 +2,61 @@
 import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
 ---
-<Layout title="Planificación" active="plan"><main class="wrap">
-<h2>Planificación del trabajo</h2>
-<ol class="tl">{site.plan.map(p=><li><strong>{p.fecha}</strong><br/>{p.tarea}</li>)}</ol>
-<h2 style="margin-top:3rem">Evidencia de la reunión</h2>
-<img src={site.meetImg} alt="Captura de la reunión de planificación" style="max-width:100%;border-radius:14px" onerror="this.outerHTML='<div class=&quot;empty frame&quot;>Guarda tu captura en public/evidencias/meet.png</div>'"/>
-</main></Layout>
+<Layout title="Planificación" active="plan">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <img src="/img/hero-reflexion.jpeg" alt="Reflexión y planificación del trabajo" class="hero-bg" />
+    <div class="wrap">
+      <span class="badge">📋 Organización</span>
+      <h2 style="color:var(--ice); margin-top:0.5rem">Planificación del trabajo</h2>
+      <p class="hero-subtitle">Pequeñas acciones, grandes cambios · Cronograma y evidencias del proceso</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- Intro row -->
+    <div class="section-image-row fade-up">
+      <div>
+        <span class="section-label">📅 Cronograma</span>
+        <h2>Línea de tiempo</h2>
+        <p style="margin-top:1rem">Organizamos el trabajo en etapas claras para alcanzar todos los objetivos del proyecto de forma eficiente.</p>
+      </div>
+      <img src="/img/equipo-intro.jpeg" alt="Equipo planificando el trabajo" class="deco-img floating" />
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Timeline -->
+    <div class="fade-up" style="max-width:650px">
+      <ol class="tl">
+        {site.plan.map((p, idx) => (
+          <li class="fade-up" style={`transition-delay: ${idx * 0.12}s`}>
+            <strong style="color:var(--green)">{p.fecha}</strong><br/>
+            {p.tarea}
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Evidencia -->
+    <div class="fade-up">
+      <span class="section-label">📸 Evidencia</span>
+      <h2>Reunión de planificación</h2>
+    </div>
+    <div class="fade-up" style="margin-top:1.5rem">
+      <img
+        src={site.meetImg}
+        alt="Captura de la reunión de planificación"
+        style="width:100%; max-width:800px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)"
+        onerror="this.outerHTML='<div class=&quot;empty frame&quot;>📷 Guarda tu captura en public/evidencias/meet.png</div>'"
+      />
+    </div>
+
+    <!-- Decorative bottom image -->
+    <div style="margin-top:3rem; text-align:center" class="fade-up">
+      <img src="/img/equipo-trabajo.jpeg" alt="Equipo trabajando juntos" style="width:100%; max-width:600px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)" />
+    </div>
+  </main>
+</Layout>

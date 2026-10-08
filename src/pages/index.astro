@@ -3,26 +3,119 @@ import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
 ---
 <Layout title="Inicio" active="inicio">
-<header class="hero"><div class="wrap">
-<p class="meta">{site.asignatura} · {site.ods}</p>
-<h1>{site.titulo}</h1>
-<svg class="mount" viewBox="0 0 800 260" role="img" aria-label="Montaña cuya nieve disminuye al mover el control">
- <defs><clipPath id="c"><rect id="cut" x="0" y="0" width="800" height="80"/></clipPath></defs>
- <path d="M0 260 L150 120 L240 170 L400 30 L560 150 L650 100 L800 260Z" fill="#1d5560"/>
- <path d="M0 260 L150 120 L240 170 L400 30 L560 150 L650 100 L800 260Z" fill="#f4fbfa" clip-path="url(#c)"/>
- <path d="M0 260 L120 190 L330 230 L520 195 L800 245 L800 260Z" fill="#0d2830"/>
-</svg>
-<div class="ctl"><label for="yr">Retroceso glaciar (ilustración)</label><input id="yr" type="range" min="0" max="100" value="0"><output id="o">Nevado completo</output></div>
-</div></header>
-<main class="wrap">
-<h2>Objetivo del trabajo</h2><p>{site.objetivo}</p>
-<h2 style="margin-top:3rem">Integrantes</h2>
-<div class="grid">{site.equipo.map(m=><article class="card"><img class="avatar" src={m.foto} alt={'Foto de '+m.nombre} onerror="this.style.display='none'"/><h3>{m.nombre}</h3><p class="small">{m.carrera}<br/>Código: {m.codigo}</p></article>)}</div>
-<h2 style="margin-top:3rem">Índice</h2>
-<ol><li>Impactos en el Perú</li><li>Una propuesta por integrante</li><li>Video y autoevaluación</li><li>Planificación y evidencias</li><li>Referencias APA 7</li></ol>
-</main>
-<script>
-const r=document.getElementById('yr') as HTMLInputElement,c=document.getElementById('cut'),o=document.getElementById('o');
-r.addEventListener('input',()=>{const v=+r.value;c?.setAttribute('height',String(80-v*0.6));if(o)o.textContent=v<5?'Nevado completo':v>90?'Casi sin nieve':'Retrocediendo';});
-</script>
+  <!-- Hero Section with Background Image -->
+  <header class="hero">
+    <img src="/img/hero-intro.jpeg" alt="Paisaje andino peruano con glaciares" class="hero-bg" />
+    <div class="wrap">
+      <span class="badge">🌍 {site.ods}</span>
+      <p class="meta">{site.asignatura}</p>
+      <h1>{site.titulo}</h1>
+
+      <svg class="mount" viewBox="0 0 800 260" role="img" aria-label="Montaña cuya nieve disminuye al mover el control">
+        <defs><clipPath id="c"><rect id="cut" x="0" y="0" width="800" height="80"/></clipPath></defs>
+        <path d="M0 260 L150 120 L240 170 L400 30 L560 150 L650 100 L800 260Z" fill="#1a8a4a" opacity="0.8"/>
+        <path d="M0 260 L150 120 L240 170 L400 30 L560 150 L650 100 L800 260Z" fill="#e8f5f0" clip-path="url(#c)"/>
+        <path d="M0 260 L120 190 L330 230 L520 195 L800 245 L800 260Z" fill="#0a1f1c"/>
+      </svg>
+      <div class="ctl">
+        <label for="yr">Retroceso glaciar (ilustración)</label>
+        <input id="yr" type="range" min="0" max="100" value="0">
+        <output id="o">Nevado completo</output>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Section -->
+  <section class="wrap">
+    <div class="stats-row fade-up">
+      <div class="stat-card">
+        <div class="stat-number">56%</div>
+        <div class="stat-label">Glaciares perdidos en 6 décadas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">68%</div>
+        <div class="stat-label">Glaciares tropicales del mundo en Perú</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">13</div>
+        <div class="stat-label">ODS: Acción por el clima</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2030</div>
+        <div class="stat-label">Meta de la Agenda Global</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- Objetivo Section -->
+    <div class="section-image-row fade-up">
+      <div>
+        <span class="section-label">🎯 Objetivo del trabajo</span>
+        <h2>Nuestra misión</h2>
+        <p style="margin-top:1rem">{site.objetivo}</p>
+      </div>
+      <img src="/img/peru-clima.jpeg" alt="Mapa climático del Perú" class="deco-img floating" />
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Integrantes -->
+    <div class="fade-up">
+      <span class="section-label">👥 Nuestro equipo</span>
+      <h2>Integrantes</h2>
+    </div>
+    <div class="grid" style="margin-top:1.5rem">
+      {site.equipo.map((m, i) => (
+        <article class="card fade-up" style={`transition-delay: ${i * 0.1}s`}>
+          <img class="avatar" src={m.foto} alt={'Foto de ' + m.nombre} onerror="this.style.display='none'" />
+          <h3>{m.nombre}</h3>
+          <p class="small">{m.carrera}<br/>Código: {m.codigo}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Image showcase -->
+    <div class="fade-up">
+      <span class="section-label">📸 Recursos visuales</span>
+      <h2>Galería del proyecto</h2>
+    </div>
+    <div class="img-showcase fade-up">
+      <img src="/img/sostenibilidad.jpeg" alt="Propuestas de sostenibilidad" />
+      <img src="/img/libro-ambiente.jpeg" alt="Libro sobre medio ambiente y clima" />
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Índice -->
+    <div class="fade-up">
+      <span class="section-label">📑 Contenido</span>
+      <h2>Índice del trabajo</h2>
+    </div>
+    <ol class="index-list fade-up" style="margin-top:1rem; max-width: 600px">
+      <li>Impactos del cambio climático en el Perú</li>
+      <li>Una propuesta por integrante</li>
+      <li>Video de exposición y autoevaluación</li>
+      <li>Planificación y evidencias</li>
+      <li>Referencias APA 7.ª edición</li>
+    </ol>
+
+    <!-- Decorative bottom image -->
+    <div style="margin-top:3rem; text-align:center" class="fade-up">
+      <img src="/img/equipo-trabajo.jpeg" alt="Equipo de trabajo ODS 13" style="width:100%; max-width:700px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)" />
+    </div>
+  </main>
+
+  <script>
+    const r = document.getElementById('yr') as HTMLInputElement;
+    const c = document.getElementById('cut');
+    const o = document.getElementById('o');
+    r.addEventListener('input', () => {
+      const v = +r.value;
+      c?.setAttribute('height', String(80 - v * 0.6));
+      if (o) o.textContent = v < 5 ? 'Nevado completo' : v > 90 ? 'Casi sin nieve' : 'Retrocediendo';
+    });
+  </script>
 </Layout>

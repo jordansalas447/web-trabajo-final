@@ -2,14 +2,89 @@
 import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
 ---
-<Layout title="Impactos" active="impactos"><main class="wrap">
-<h2>Cómo se evidencia el cambio climático en el Perú</h2>
-<p>El Perú es muy vulnerable: tiene costa desértica, Andes con glaciares tropicales y una gran Amazonía.</p>
-<div class="grid">{site.impactos.map(i=><article class="card big"><h3>{i.t}</h3><p>{i.d}</p></article>)}</div>
-<h2 style="margin-top:3rem">Galería de imágenes</h2>
-<div class="grid">{site.galeria.map(g=><figure class="card"><img src={g.src} alt={g.alt} style="width:100%;border-radius:10px" onerror="this.outerHTML='<div class=&quot;empty frame&quot;>Sube tu imagen a public'+this.getAttribute('src')+'</div>'"/><figcaption class="small">{g.credito}</figcaption></figure>)}</div>
-<h2 style="margin-top:3rem">Citas del trabajo</h2>
-<div class="grid">{site.citas.map(c=><blockquote class="card"><p class="small">{c.tipo}</p>{c.texto}</blockquote>)}</div>
-<h2 style="margin-top:3rem">Presentación (Slides)</h2>
-{site.slidesUrl?<iframe class="frame" src={site.slidesUrl} title="Presentación" allowfullscreen></iframe>:<div class="empty frame">Pega la URL embed de tu Google Slides en site.ts → slidesUrl</div>}
-</main></Layout>
+<Layout title="Impactos" active="impactos">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <img src="/img/hero-situacion.jpeg" alt="Situación actual del clima en Perú" class="hero-bg" />
+    <div class="wrap">
+      <span class="badge">🌡️ Situación actual</span>
+      <h2 style="color:var(--ice); margin-top:0.5rem">Cómo se evidencia el cambio climático en el Perú</h2>
+      <p class="hero-subtitle">El Perú es uno de los países más vulnerables al cambio climático: posee costa desértica, Andes con glaciares tropicales y una inmensa Amazonía.</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- Context image + text -->
+    <div class="section-image-row fade-up">
+      <div>
+        <span class="section-label">📊 Datos clave</span>
+        <h2>Impactos principales</h2>
+        <p style="margin-top:1rem">El Perú reúne el 68% de los glaciares tropicales del mundo. Los efectos del cambio climático ya se sienten en cada región del país, desde la costa hasta la selva.</p>
+      </div>
+      <img src="/img/peru-clima.jpeg" alt="Mapa del Perú con efectos climáticos" class="deco-img floating" />
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Impact Cards -->
+    <div class="fade-up">
+      <span class="section-label">⚠️ Evidencias</span>
+      <h2>Impactos identificados</h2>
+    </div>
+    <div class="grid" style="margin-top:1.5rem">
+      {site.impactos.map((i, idx) => (
+        <article class="card big fade-up" style={`transition-delay: ${idx * 0.1}s`}>
+          <h3>{i.t}</h3>
+          <p>{i.d}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Gallery -->
+    <div class="fade-up">
+      <span class="section-label">📷 Evidencia visual</span>
+      <h2>Galería de imágenes</h2>
+    </div>
+    <div class="gallery-grid" style="margin-top:1.5rem">
+      {site.galeria.map((g, idx) => (
+        <figure class="gallery-card fade-up" style={`transition-delay: ${idx * 0.1}s`}>
+          <img src={g.src} alt={g.alt} onerror="this.outerHTML='<div class=&quot;empty&quot; style=&quot;aspect-ratio:16/10;display:grid;place-items:center&quot;>Sube tu imagen a public' + this.getAttribute('src') + '</div>'" />
+          <figcaption>{g.alt} · <span class="small">{g.credito}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Citas -->
+    <div class="fade-up">
+      <span class="section-label">📝 Citas académicas</span>
+      <h2>Citas del trabajo</h2>
+    </div>
+    <div class="grid" style="margin-top:1.5rem">
+      {site.citas.map((c, idx) => (
+        <blockquote class="card fade-up" style={`transition-delay: ${idx * 0.1}s`}>
+          <p class="small" style="margin-bottom:0.5rem; color:var(--green)">{c.tipo}</p>
+          <p>{c.texto}</p>
+        </blockquote>
+      ))}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Slides -->
+    <div class="fade-up">
+      <span class="section-label">📊 Presentación</span>
+      <h2>Slides del equipo</h2>
+    </div>
+    <div class="fade-up" style="margin-top:1.5rem">
+      {site.slidesUrl ? (
+        <iframe class="frame" src={site.slidesUrl} title="Presentación" allowfullscreen></iframe>
+      ) : (
+        <div class="empty frame">📎 Pega la URL embed de tu Google Slides en site.ts → slidesUrl</div>
+      )}
+    </div>
+  </main>
+</Layout>

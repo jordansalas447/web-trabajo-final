@@ -2,8 +2,52 @@
 import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
 ---
-<Layout title="Referencias" active="refs"><main class="wrap">
-<h2>Referencias (APA 7.ª edición)</h2>
-{[...site.referencias].sort().map(r=><p class="ref">{r}</p>)}
-<p class="small">Imágenes y videos usados: indica autor y licencia aquí.</p>
-</main></Layout>
+<Layout title="Referencias" active="refs">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <img src="/img/hero-fuentes.jpeg" alt="Fuentes y referencias bibliográficas" class="hero-bg" />
+    <div class="wrap">
+      <span class="badge">📚 Fuentes</span>
+      <h2 style="color:var(--ice); margin-top:0.5rem">Referencias bibliográficas</h2>
+      <p class="hero-subtitle">Información confiable para un cambio real · Formato APA 7.ª edición</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- Intro row -->
+    <div class="section-image-row fade-up">
+      <div>
+        <span class="section-label">📖 Bibliografía</span>
+        <h2>Nuestras fuentes</h2>
+        <p style="margin-top:1rem">Todas las referencias están formateadas según la norma APA 7.ª edición. Las fuentes incluyen informes gubernamentales, publicaciones científicas internacionales y datos oficiales.</p>
+      </div>
+      <img src="/img/equipo-fuentes.jpeg" alt="Equipo investigando fuentes bibliográficas" class="deco-img floating" />
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- References List -->
+    <div class="fade-up">
+      <span class="section-label">📋 Lista completa</span>
+      <h2>Referencias (APA 7.ª edición)</h2>
+    </div>
+    <div style="margin-top:1.5rem">
+      {[...site.referencias].sort().map((r, idx) => (
+        <p class="ref fade-up" style={`transition-delay: ${idx * 0.08}s`}>{r}</p>
+      ))}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="fade-up" style="margin-top:1rem">
+      <p class="small" style="padding:1.2rem; background:var(--surface); border-radius:var(--radius); border:1px solid var(--line)">
+        📷 <strong>Nota:</strong> Imágenes y videos usados en este trabajo: indica autor y licencia en esta sección.
+      </p>
+    </div>
+
+    <!-- Decorative bottom image -->
+    <div style="margin-top:3rem; text-align:center" class="fade-up">
+      <img src="/img/libro-ambiente.jpeg" alt="Libro sobre medio ambiente" style="width:100%; max-width:400px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)" />
+    </div>
+  </main>
+</Layout>

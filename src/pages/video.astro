@@ -1,13 +1,86 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
-const emb=(u:string)=>{const m=u.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/);return m?'https://www.youtube.com/embed/'+m[1]:u;};
+const emb = (u: string) => {
+  const m = u.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/);
+  return m ? 'https://www.youtube.com/embed/' + m[1] : u;
+};
 ---
-<Layout title="Video" active="video"><main class="wrap">
-<h2>Exposición del equipo</h2><p class="small">Duración máxima: 7 minutos.</p>
-{site.videoUrl?<iframe class="frame" src={emb(site.videoUrl)} title="Video de exposición" allowfullscreen></iframe>:<div class="empty frame">Pega la URL embed del video en site.ts → videoUrl</div>}
-<h2 style="margin-top:3rem">Videos de apoyo (YouTube)</h2><p class="small">Pega el enlace normal de YouTube en site.ts → videos[].url y se convierte solo.</p>
-<div class="grid">{site.videos.map(v=><article class="card"><h3>{v.titulo}</h3>{v.url?<iframe class="frame" src={emb(v.url)} title={v.titulo} allowfullscreen></iframe>:<div class="empty frame"><a href={'https://www.youtube.com/results?search_query='+encodeURIComponent(v.buscar)}>Buscar en YouTube y copiar el enlace</a></div>}</article>)}</div>
-<h2 style="margin-top:3rem">Autoevaluación</h2>
-<div class="grid">{site.equipo.map(m=><article class="card"><h3>{m.nombre}</h3><p><strong>Fortalezas:</strong> {m.fortalezas}</p><p><strong>Debilidades:</strong> {m.debilidades}</p></article>)}</div>
-</main></Layout>
+<Layout title="Video" active="video">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <img src="/img/hero-video.jpeg" alt="Video de exposición sobre el clima" class="hero-bg" />
+    <div class="wrap">
+      <span class="badge">🎬 Exposición</span>
+      <h2 style="color:var(--ice); margin-top:0.5rem">Exposición del equipo</h2>
+      <p class="hero-subtitle">Conocer para actuar · Duración máxima: 7 minutos</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- Main Video -->
+    <div class="fade-up">
+      <span class="section-label">🎥 Video principal</span>
+      <h2>Nuestra exposición</h2>
+    </div>
+    <div class="fade-up" style="margin-top:1.5rem">
+      {site.videoUrl ? (
+        <iframe class="frame" src={emb(site.videoUrl)} title="Video de exposición" allowfullscreen></iframe>
+      ) : (
+        <div class="empty frame">🎬 Pega la URL embed del video en site.ts → videoUrl</div>
+      )}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Decorative image -->
+    <div class="section-image-row fade-up">
+      <div>
+        <span class="section-label">📹 Recursos audiovisuales</span>
+        <h2>Videos de apoyo</h2>
+        <p style="margin-top:1rem">Pega el enlace normal de YouTube en site.ts → videos[].url y se convierte automáticamente al formato embed.</p>
+      </div>
+      <img src="/img/video-clima.jpeg" alt="Recursos de video sobre el clima" class="deco-img floating" />
+    </div>
+
+    <!-- Support Videos -->
+    <div class="grid" style="margin-top:1.5rem">
+      {site.videos.map((v, idx) => (
+        <article class="card fade-up" style={`transition-delay: ${idx * 0.1}s`}>
+          <h3>🎞️ {v.titulo}</h3>
+          {v.url ? (
+            <iframe class="frame" src={emb(v.url)} title={v.titulo} allowfullscreen style="margin-top:1rem"></iframe>
+          ) : (
+            <div class="empty frame" style="margin-top:1rem">
+              <a href={'https://www.youtube.com/results?search_query=' + encodeURIComponent(v.buscar)}>🔍 Buscar en YouTube y copiar el enlace</a>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Autoevaluación -->
+    <div class="fade-up">
+      <span class="section-label">📝 Reflexión personal</span>
+      <h2>Autoevaluación</h2>
+    </div>
+    <div class="grid" style="margin-top:1.5rem">
+      {site.equipo.map((m, idx) => (
+        <article class="card fade-up" style={`transition-delay: ${idx * 0.1}s`}>
+          <h3>{m.nombre}</h3>
+          <div style="margin-top:0.8rem">
+            <p><span style="color:var(--green); font-weight:600">✅ Fortalezas:</span> {m.fortalezas}</p>
+            <p><span style="color:var(--ochre); font-weight:600">⚡ Debilidades:</span> {m.debilidades}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Decorative bottom image -->
+    <div style="margin-top:3rem; text-align:center" class="fade-up">
+      <img src="/img/estudiante.jpeg" alt="Estudiante investigando sobre el clima" style="width:100%; max-width:550px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)" />
+    </div>
+  </main>
+</Layout>
