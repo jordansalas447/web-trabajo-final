@@ -1,23 +1,23 @@
 // ✏️ EDITA AQUÍ: todo el sitio se alimenta de este archivo.
 export const site = {
-  universidad: 'NOMBRE DE LA UNIVERSIDAD',
+  universidad: 'UNIVERSIDAD CONTINENTAL',
   asignatura: 'Estrategias y Herramientas Digitales para el Aprendizaje',
   ods: 'ODS 13: Acción por el clima',
   titulo: 'Impactos del cambio climático en el Perú y propuestas para un futuro sostenible',
   objetivo: 'Indagar sobre los impactos del cambio climático en el Perú y proponer acciones para un futuro sostenible.',
   videoUrl: '', // URL "embed" (YouTube: https://www.youtube.com/embed/ID)
   slidesUrl: '', // Opcional: URL embed de Google Slides
-  meetImg: '/evidencias/meet.png',
+  meetImg: '/evidencias/meet.jpeg',
   equipo: [
-    { nombre: 'Apellidos, Nombres (1)', codigo: 'U00000000', carrera: 'Carrera profesional', foto: '/team/integrante1.jpg',
+    { nombre: 'Susan Lizbeth Salhuana Vilanueva', codigo: '', carrera: 'Derecho', foto: '/img/Susan.jpeg', Apoyo:'Por las imagenes y el desarrollo incial de la paguina web',
       propuestaTitulo: 'Cosecha de agua y huertos escolares',
       propuesta: 'Impulsar en comunidades altoandinas y escuelas rurales la siembra y cosecha de agua (zanjas de infiltración, reservorios) junto con huertos con cultivos resistentes a sequías y heladas, para asegurar agua y alimentos.',
       img: '/img/propuesta1.jpg', slides: '', fortalezas: 'Escribe tus fortalezas.', debilidades: 'Escribe tus debilidades.' },
-    { nombre: 'Apellidos, Nombres (2)', codigo: 'U00000000', carrera: 'Carrera profesional', foto: '/team/integrante2.jpg',
+    { nombre: 'Jordan Enrique Salas Vera', codigo: '', carrera: 'Ing. Sistemas e Informática', foto: '/img/Jordan.jpeg', Apoyo:'Por tener la iniciativa de reunir al equipo y la colaboracion',
       propuestaTitulo: 'Alerta temprana digital ante huaicos e inundaciones',
       propuesta: 'Crear un mapa web y un canal de mensajería que reúna avisos oficiales de SENAMHI e INDECI con recomendaciones simples para familias de zonas de riesgo, de modo que puedan actuar a tiempo.',
       img: '/img/propuesta2.jpg', slides: '', fortalezas: 'Escribe tus fortalezas.', debilidades: 'Escribe tus debilidades.' },
-    { nombre: 'Apellidos, Nombres (3)', codigo: 'U00000000', carrera: 'Carrera profesional', foto: '/team/integrante3.jpg',
+    { nombre: 'Andrea Isabel Tinoco Lozano', codigo: 'U00000000', carrera: 'Administracion', foto: '/img/Andrea.jpeg', Apoyo:'Desarrollo de la paguina web',
       propuestaTitulo: 'Campus verde y reforestación con especies nativas',
       propuesta: 'Lanzar una campaña universitaria para reducir la huella de carbono (energía, transporte, residuos) y organizar jornadas de reforestación con especies nativas, difundidas con videos cortos y redes sociales.',
       img: '/img/propuesta3.jpg', slides: '', fortalezas: 'Escribe tus fortalezas.', debilidades: 'Escribe tus debilidades.' },
@@ -28,9 +28,9 @@ export const site = {
     { titulo: 'Fenómeno El Niño costero', buscar: 'Niño costero Perú SENAMHI explicación', url: '' },
   ],
   galeria: [
-    { src: '/img/glaciar.jpg', alt: 'Glaciar andino', credito: 'Autor, año, licencia' },
-    { src: '/img/huaico.jpg', alt: 'Huaico o inundación', credito: 'Autor, año, licencia' },
-    { src: '/img/amazonia.jpg', alt: 'Amazonía peruana', credito: 'Autor, año, licencia' },
+    { src: '/img/glaciar.jpeg', alt: 'l Nevado Auzangate y la laguna glaciar Upiscocha', credito: 'El Nevado Auzangate y la laguna glaciar Upiscocha (alimentada por el retroceso del Auzangate), en Cusco. La laguna tse desbordó en 2022. Aguas abajo, hay varios centros poblados.' },
+    { src: '/img/huaico.jpeg', alt: 'Huaico', credito: 'People inspect the road destroyed by heavy rain that triggered flooding in Arequipa, Peru, Monday, Feb. 23, 2026. (AP Photo/Jose Sotomayor) Jose Sotomayor (AP)' },
+    { src: '/img/amazonia.jpeg', alt: 'Amazonía peruana', credito: 'Una zona yace deforestada por la minería ilegal de oro en la provincia peruana de Madre de Dios, un día antes de que el papa Francisco llegara a la Amazonía peruana en el año 2018. Rodrigo Abd (AP)' },
   ],
   plan: [
     { fecha: 'Día 1', tarea: 'Reunión en Google Meet: elegir ODS 13 y definir objetivo.' },

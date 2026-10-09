@@ -6,11 +6,11 @@ import { site } from '../data/site';
   <!-- Hero Banner -->
   <section class="page-hero">
     <img src="/img/hero-reflexion.jpeg" alt="Reflexión y planificación del trabajo" class="hero-bg" />
-    <div class="wrap">
+    <!-- <div class="wrap">
       <span class="badge">📋 Organización</span>
       <h2 style="color:var(--ice); margin-top:0.5rem">Planificación del trabajo</h2>
       <p class="hero-subtitle">Pequeñas acciones, grandes cambios · Cronograma y evidencias del proceso</p>
-    </div>
+    </div> -->
   </section>
 
   <main class="wrap">
@@ -49,14 +49,36 @@ import { site } from '../data/site';
       <img
         src={site.meetImg}
         alt="Captura de la reunión de planificación"
-        style="width:100%; max-width:800px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)"
+        style="width:100%; max-width:3500px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)"
         onerror="this.outerHTML='<div class=&quot;empty frame&quot;>📷 Guarda tu captura en public/evidencias/meet.png</div>'"
       />
     </div>
+
+         <!-- Sección de agradecimientos a los miembros del equipo -->
+  <div class="section-divider"></div>
+  <div class="fade-up" style="margin-top:2.5rem">
+    <span class="section-label">🤝 Agradecimientos</span>
+    <h2>Reconocimiento a nuestro equipo</h2>
+    <p style="margin-top:1rem">
+      Queremos expresar nuestro sincero agradecimiento a cada integrante del equipo por su dedicación, esfuerzo y compromiso en la elaboración de este proyecto. Su trabajo colaborativo ha hecho posible la construcción de propuestas valiosas y la recopilación de información confiable sobre el ODS 13.
+    </p>
+
+    <ul class="team-list fade-up" style="margin: 2rem 0 0 2rem; list-style: disc;">
+      {site.equipo.map((m, idx) => (
+        <li style={`transition-delay: ${idx * 0.08}s; margin-bottom:0.6rem`}>
+          <strong>{m.nombre}</strong> – {m.carrera} ({m.Apoyo})
+        </li>
+      ))}
+    </ul>
+    <p style="margin-top:2rem">
+      ¡Gracias por su entrega y entusiasmo durante todo el proceso!
+    </p>
+  </div>
 
     <!-- Decorative bottom image -->
     <div style="margin-top:3rem; text-align:center" class="fade-up">
       <img src="/img/equipo-trabajo.jpeg" alt="Equipo trabajando juntos" style="width:100%; max-width:600px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)" />
     </div>
+
   </main>
 </Layout>

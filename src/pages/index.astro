@@ -7,11 +7,11 @@ import { site } from '../data/site';
   <header class="hero">
     <img src="/img/hero-intro.jpeg" alt="Paisaje andino peruano con glaciares" class="hero-bg" />
     <div class="wrap">
-      <span class="badge">🌍 {site.ods}</span>
-      <p class="meta">{site.asignatura}</p>
-      <h1>{site.titulo}</h1>
+      <!-- <span class="badge">🌍 {site.ods}</span> -->
+      <!-- <p class="meta">{site.asignatura}</p>
+      <h1>{site.titulo}</h1> -->
 
-      <svg class="mount" viewBox="0 0 800 260" role="img" aria-label="Montaña cuya nieve disminuye al mover el control">
+      <!-- <svg class="mount" viewBox="0 0 800 260" role="img" aria-label="Montaña cuya nieve disminuye al mover el control">
         <defs><clipPath id="c"><rect id="cut" x="0" y="0" width="800" height="80"/></clipPath></defs>
         <path d="M0 260 L150 120 L240 170 L400 30 L560 150 L650 100 L800 260Z" fill="#1a8a4a" opacity="0.8"/>
         <path d="M0 260 L150 120 L240 170 L400 30 L560 150 L650 100 L800 260Z" fill="#e8f5f0" clip-path="url(#c)"/>
@@ -21,7 +21,7 @@ import { site } from '../data/site';
         <label for="yr">Retroceso glaciar (ilustración)</label>
         <input id="yr" type="range" min="0" max="100" value="0">
         <output id="o">Nevado completo</output>
-      </div>
+      </div> -->
     </div>
   </header>
 
@@ -70,7 +70,9 @@ import { site } from '../data/site';
         <article class="card fade-up" style={`transition-delay: ${i * 0.1}s`}>
           <img class="avatar" src={m.foto} alt={'Foto de ' + m.nombre} onerror="this.style.display='none'" />
           <h3>{m.nombre}</h3>
-          <p class="small">{m.carrera}<br/>Código: {m.codigo}</p>
+          <p class="small">{m.carrera}
+            {/* <br/>Código: {m.codigo} */}
+            </p>
         </article>
       ))}
     </div>
@@ -84,7 +86,7 @@ import { site } from '../data/site';
     </div>
     <div class="img-showcase fade-up">
       <img src="/img/sostenibilidad.jpeg" alt="Propuestas de sostenibilidad" />
-      <img src="/img/libro-ambiente.jpeg" alt="Libro sobre medio ambiente y clima" />
+      <img src="/evidencias/meet.jpeg" alt="Libro sobre medio ambiente y clima" />
     </div>
 
     <div class="section-divider"></div>
@@ -95,13 +97,22 @@ import { site } from '../data/site';
       <h2>Índice del trabajo</h2>
     </div>
     <ol class="index-list fade-up" style="margin-top:1rem; max-width: 600px">
-      <li>Impactos del cambio climático en el Perú</li>
-      <li>Una propuesta por integrante</li>
-      <li>Video de exposición y autoevaluación</li>
-      <li>Planificación y evidencias</li>
-      <li>Referencias APA 7.ª edición</li>
+      <li>
+        <a href="/impactos" style="color: var(--green); font-weight: 600;">Impactos del cambio climático en el Perú</a>
+      </li>
+      <li>
+        <a href="/propuestas" style="color: var(--green); font-weight: 600;">Una propuesta por integrante</a>
+      </li>
+      <li>
+        <a href="/video" style="color: var(--green); font-weight: 600;">Video de exposición y autoevaluación</a>
+      </li>
+      <li>
+        <a href="/planificacion" style="color: var(--green); font-weight: 600;">Planificación y evidencias</a>
+      </li>
+      <li>
+        <a href="/referencias" style="color: var(--green); font-weight: 600;">Referencias APA 7.ª edición</a>
+      </li>
     </ol>
-
     <!-- Decorative bottom image -->
     <div style="margin-top:3rem; text-align:center" class="fade-up">
       <img src="/img/equipo-trabajo.jpeg" alt="Equipo de trabajo ODS 13" style="width:100%; max-width:700px; border-radius:var(--radius-lg); box-shadow:var(--shadow); border:1px solid var(--line)" />
