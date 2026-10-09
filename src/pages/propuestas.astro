@@ -19,17 +19,17 @@ import { site } from '../data/site';
       <div>
         <span class="section-label">🌱 Nuestras ideas</span>
         <h2>Propuestas de mejora</h2>
-        <p style="margin-top:1rem">Pequeñas acciones generan grandes cambios. Cada propuesta nace del análisis de la realidad peruana y busca ser implementable a nivel local.</p>
+        <p style="margin-top:1rem">Las siguientes propuestas buscan mitigar a algunos de los principales impactos del cambio climático identificados en el Perú. Se plantean acciones aplicables desde comunidades, instituciones educativas y espacios universitarios, con el propósito de fortalecer la adaptación, la prevención y la sostenibilidad en relación con el ODS 13: Acción por el clima.</p>
       </div>
       <img src="/img/propuestas-mejora.jpeg" alt="Infografía de propuestas de mejora ODS 13" class="deco-img floating" />
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- Propuestas Cards -->
-    <div class="grid" style="margin-top:1rem">
+    <!-- Propuestas Cards - ancho completo -->
+    <div style="margin-top:1rem; display:flex; flex-direction:column; gap:2.5rem; width:100%">
       {site.equipo.map((m, idx) => (
-        <article class="card big fade-up" style={`transition-delay: ${idx * 0.15}s`}>
+        <article class="card big fade-up" style={`transition-delay: ${idx * 0.15}s; width:100%`}>
           <span class="badge" style="margin-bottom:1rem">Propuesta {idx + 1}</span>
           <h3>{m.propuestaTitulo}</h3>
           <p class="small" style="margin:0.5rem 0; color:var(--teal)">{m.nombre} · {m.carrera}</p>
@@ -41,9 +41,9 @@ import { site } from '../data/site';
             onerror="this.outerHTML='<div class=&quot;empty&quot; style=&quot;padding:1.5rem; margin-top:1rem&quot;>📷 Imagen: public' + this.getAttribute('src') + '</div>'"
           />
           {m.slides ? (
-            <iframe class="frame" src={m.slides} title={'Slides: ' + m.propuestaTitulo} allowfullscreen style="margin-top:1rem"></iframe>
-          ) : (
-            <div class="empty" style="margin-top:1rem; padding:1.2rem">📊 Slides de esta propuesta: pega la URL en site.ts → slides</div>
+            <iframe class="frame" src={m.slides} title={'Slides: ' + m.propuestaTitulo} allowfullscreen style="margin-top:1rem; width:100%"></iframe>
+          ) : ( <></>
+            // <div class="empty" style="margin-top:1rem; padding:1.2rem">📊 Slides de esta propuesta: pega la URL en site.ts → slides</div>
           )}
         </article>
       ))}
