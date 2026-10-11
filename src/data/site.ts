@@ -24,8 +24,8 @@ export const site = {
       propuestaTitulo: 'Campus verde y reforestación con especies nativas',
       propuesta: 'Reducir la huella ambiental y promover una cultura de responsabilidad climática dentro de la comunidad universitaria.La propuesta plantea desarrollar campañas de ahorro de energía, movilidad sostenible, segregación de residuos y reducción del consumo innecesario, junto con jornadas de reforestación con especies nativas y actividades de sensibilización ambiental.Impacto esperado: un campus más sostenible, mayor participación estudiantil y fortalecimiento de áreas verdes que contribuyan a la captura de carbono y conservación de la biodiversidad.Al final de las tres propuestas colocamos esto Estas propuestas muestran que todos podemos contribuir frente al cambio climático. No se trata solo de grandes decisiones del Estado, sino también de acciones concretas como cuidar el agua, prevenir riesgos, reforestar y reducir nuestra huella ambiental. Si estas medidas se aplican en escuelas, universidades y comunidades, pueden ayudar a proteger el ambiente y mejorar la calidad de vida de las personas.',
       img: '/img/propuesta3.jpg', slides: '', 
-      fortalezas: 'Escribe tus fortalezas.', 
-      debilidades: 'Escribe tus debilidades.' },
+      fortalezas: 'Soy responsable y comprometida con mis actividades.Me gusta aprender y asumir nuevos retos.Tengo disposición para trabajar en equipo.', 
+      debilidades: 'A veces me cuesta expresar mis ideas con seguridad.Necesito mejorar mi organización del tiempo.Puedo sentir nervios al exponer frente a los demás.' },
   ],
   videos: [
     { titulo: 'Documental «Andes sin glaciares»', buscar: 'Andes sin glaciares documental COSUDE', url: 'https://www.youtube.com/watch?v=kNzQITqUGSA&t=64s' },
