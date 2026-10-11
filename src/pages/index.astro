@@ -47,65 +47,6 @@ import { site } from '../data/site';
     </div>
   </section>
 
-  <section class="intro-section fade-up">
-    <div class="intro-grid">
-      <div class="intro-row">
-        <span class="intro-label">Asignatura:</span>
-        <span class="intro-value">Estrategias y Herramientas Digitales para el Aprendizaje</span>
-      </div>
-      <div class="intro-row">
-        <span class="intro-label">Tema:</span>
-        <span class="intro-value">ODS 13 – Acción por el clima</span>
-      </div>
-      <div class="intro-row">
-        <span class="intro-label">Título del trabajo:</span>
-        <span class="intro-value">Impactos del cambio climático en el Perú y propuestas para un futuro sostenible</span>
-      </div>
-      <div class="intro-row">
-        <span class="intro-label">Docente:</span>
-        <span class="intro-value">Elisa Montoya Cantoral</span>
-      </div>
-      <div class="intro-row">
-        <span class="intro-label">NRC:</span>
-        <span class="intro-value">43320</span>
-      </div>
-    </div>
-    <style>
-      .intro-section {
-        background: #f6fbfa;
-        border-radius: 1rem;
-        padding: 2rem 1.5rem 1.5rem 1.5rem;
-        box-shadow: 0 4px 24px 0 rgba(63, 141, 110, 0.07), 0 0 0 1.5px #d6ebe4;
-        max-width: 650px;
-        margin: 2.2rem auto 1rem auto;
-      }
-      .intro-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-      }
-      .intro-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem 1.5rem;
-        align-items: baseline;
-      }
-      .intro-label {
-        font-weight: 600;
-        color: #267A56;
-        min-width: 140px;
-      }
-      .intro-value {
-        font-size: 1.1rem;
-        color: #15513a;
-      }
-      @media (max-width: 600px) {
-        .intro-section { padding: 1.3rem 0.5rem 0.8rem 0.5rem; }
-        .intro-label, .intro-value { font-size: 1rem; }
-      }
-    </style>
-  </section>
-
   <main class="wrap">
     <!-- Objetivo Section -->
     <div class="section-image-row fade-up">
@@ -119,11 +60,87 @@ import { site } from '../data/site';
 
     <div class="section-divider"></div>
 
-    <!-- Integrantes -->
-    <div class="fade-up">
-      <span class="section-label">👥 Nuestro equipo</span>
-      <h2>Integrantes</h2>
+
+    <div class="section-image-row fade-up">
+      <div>
+        <span class="section-label">📖 Tema</span>
+        <div>
+          <h2>Acción por el Clima</h2>
+        </div>  
+      </div>
     </div>
+    <section class="intro-section fade-up">
+
+      <div class="intro-grid">
+        <div class="intro-row">
+          <span class="intro-label">Asignatura:</span>
+          <span class="intro-value">Estrategias y Herramientas Digitales para el Aprendizaje</span>
+        </div>
+        <!-- <div class="intro-row">
+          <span class="intro-label">Tema:</span>
+          <span class="intro-value">ODS 13 – Acción por el clima</span>
+        </div> -->
+        <div class="intro-row">
+          <span class="intro-label">Título del trabajo:</span>
+          <span class="intro-value">Impactos del cambio climático en el Perú y propuestas para un futuro sostenible</span>
+        </div>
+        <div class="intro-row">
+          <span class="intro-label">Docente:</span>
+          <span class="intro-value">Elisa Montoya Cantoral</span>
+        </div>
+        <div class="intro-row">
+          <span class="intro-label">NRC:</span>
+          <span class="intro-value">43320</span>
+        </div>
+      </div>
+      <style>
+        .intro-section {
+          background: #122a25;
+          border-radius: 1rem;
+          padding: 2rem 1.5rem 1.5rem 1.5rem;
+          box-shadow: 0 4px 24px 0 rgba(63, 141, 110, 0.07), 0 0 0 1.5px #d6ebe4;
+          max-width: 1100px;
+          margin: 2.2rem auto 1rem auto;
+        }
+        .intro-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+        }
+        .intro-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem 1.5rem;
+          align-items: baseline;
+        }
+        .intro-label {
+          font-weight: 600;
+          color: #ffffff;
+          min-width: 140px;
+        }
+        .intro-value {
+          font-size: 1.1rem;
+          color: #ffffff;
+        }
+        @media (max-width: 600px) {
+          .intro-section { padding: 1.3rem 0.5rem 0.8rem 0.5rem; }
+          .intro-label, .intro-value { font-size: 1rem; }
+        }
+      </style>
+    </section>
+  
+    <div class="section-divider"></div>
+
+    <!-- Integrantes -->
+    <div class="section-image-row fade-up">
+      <div>
+        <span class="section-label">👥 Nuestro equipo</span>
+        <div>
+          <h2>Integrantes</h2>
+        </div>
+      </div>
+    </div>
+
     <div class="grid" style="margin-top:1.5rem">
       {site.equipo.map((m, i) => (
         <article class="card fade-up" style={`transition-delay: ${i * 0.1}s`}>
@@ -141,10 +158,13 @@ import { site } from '../data/site';
     <!-- Image showcase -->
     <div class="fade-up">
       <span class="section-label">📸 Recursos visuales</span>
-      <h2>Galería del proyecto</h2>
+      <div>
+        <h2>Galería del proyecto</h2>
+      </div>
+      
     </div>
     <div class="img-showcase fade-up">
-      <img src="/img/sostenibilidad.jpeg" alt="Propuestas de sostenibilidad" />
+      <img src="/img/Fuentes2.jpeg" alt="Propuestas de sostenibilidad" />
       <img src="/evidencias/meet.jpeg" alt="Libro sobre medio ambiente y clima" />
     </div>
 
@@ -154,23 +174,25 @@ import { site } from '../data/site';
     <!-- Índice -->
     <div class="fade-up">
       <span class="section-label">📑 Contenido</span>
-      <h2>Índice del trabajo</h2>
+      <div>
+        <h2>Índice del trabajo</h2>
+      </div>  
     </div>
-    <ol class="index-list fade-up" style="margin-top:1rem; max-width: 600px">
+    <ol class="index-list fade-up" style="margin-top:1rem; max-width: 600px; margin-left:auto; margin-right:auto; text-align: center;">
       <li>
-        <a href="/impactos" style="color: var(--green); font-weight: 600;">Impactos del cambio climático en el Perú</a>
+        <a href="/impactos" style="color: var(--green); font-weight: 600; display: inline-block;">Impactos del cambio climático en el Perú</a>
       </li>
       <li>
-        <a href="/propuestas" style="color: var(--green); font-weight: 600;">Una propuesta por integrante</a>
+        <a href="/propuestas" style="color: var(--green); font-weight: 600; display: inline-block;">Una propuesta por integrante</a>
       </li>
       <li>
-        <a href="/video" style="color: var(--green); font-weight: 600;">Video de exposición y autoevaluación</a>
+        <a href="/video" style="color: var(--green); font-weight: 600; display: inline-block;">Video de exposición y autoevaluación</a>
       </li>
       <li>
-        <a href="/planificacion" style="color: var(--green); font-weight: 600;">Planificación y evidencias</a>
+        <a href="/planificacion" style="color: var(--green); font-weight: 600; display: inline-block;">Planificación y evidencias</a>
       </li>
       <li>
-        <a href="/referencias" style="color: var(--green); font-weight: 600;">Referencias APA 7.ª edición</a>
+        <a href="/referencias" style="color: var(--green); font-weight: 600; display: inline-block;">Referencias APA 7.ª edición</a>
       </li>
     </ol>
     <!-- Decorative bottom image -->

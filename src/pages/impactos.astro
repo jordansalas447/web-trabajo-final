@@ -29,7 +29,9 @@ import { site } from '../data/site';
     <!-- Impact Cards -->
     <div class="fade-up">
       <span class="section-label">⚠️ Evidencias</span>
-      <h2>Impactos identificados</h2>
+      <div>
+        <h2>Impactos identificados</h2>
+      </div> 
     </div>
     <div class="grid" style="margin-top:1.5rem">
       {site.impactos.map((i, idx) => (
@@ -45,7 +47,9 @@ import { site } from '../data/site';
     <!-- Gallery -->
     <div class="fade-up">
       <span class="section-label">📷 Evidencia visual</span>
-      <h2>Galería de imágenes</h2>
+      <div>
+        <h2>Galería de imágenes</h2>
+      </div>   
     </div>
     <div class="gallery-grid" style="margin-top:1.5rem">
       {site.galeria.map((g, idx) => (
@@ -61,7 +65,9 @@ import { site } from '../data/site';
     <!-- Citas -->
     <div class="fade-up">
       <span class="section-label">📝 Citas académicas</span>
-      <h2>Citas del trabajo</h2>
+      <div>
+        <h2>Citas del trabajo</h2>
+      </div> 
     </div>
     <div class="grid" style="margin-top:1.5rem">
       {site.citas.map((c, idx) => (
@@ -77,14 +83,12 @@ import { site } from '../data/site';
     <!-- Slides -->
     <div class="fade-up">
       <span class="section-label">📊 Presentación</span>
-      <h2>Slides del equipo</h2>
+      <div>
+        <h2>Slides del equipo</h2>
+      </div> 
     </div>
-    <div class="fade-up" style="margin-top:1.5rem">
-      {site.slidesUrl ? (
-        <iframe class="frame" src={site.slidesUrl} title="Presentación" allowfullscreen></iframe>
-      ) : (
-        <div class="empty frame">📎 Pega la URL embed de tu Google Slides en site.ts → slidesUrl</div>
-      )}
+    <div class="fade-up" style="margin-top:1.5rem;">
+      <img src="/img/evidencia.png" alt="Propuestas de sostenibilidad" style="display:block;width:100%;height:auto;max-width:none;border-radius:var(--radius-lg);box-shadow:var(--shadow);border:1px solid var(--line);" />
     </div>
   </main>
 </Layout>
